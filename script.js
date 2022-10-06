@@ -42,7 +42,7 @@ const leftYcontroller = document.querySelector('.left-y-control');
 const rightYcontroller = document.querySelector('.right-y-control');
 const topZcontroller = document.querySelector('.top-z-control');
 const bottomZcontroller = document.querySelector('.bottom-z-control');
-const stopRotate = document.querySelector(".section-1__controls");
+const stopRotate = document.querySelector('.section-1__controls');
 let x = 0;
 let y = 0;
 let z = 0;
@@ -84,10 +84,21 @@ const playPause = bool => {
 
 playPause(true);
 
-stopRotate.addEventListener("mouseover", () => {
+stopRotate.addEventListener('mouseover', () => {
 	playPause(false);
-})
+});
 
-stopRotate.addEventListener("mouseout", () => {
+stopRotate.addEventListener('mouseout', () => {
 	playPause(true);
-})
+});
+
+
+// ----------------------------------------------------------------------------------------------
+
+const macbookContent = document.querySelector('.section-3__content');
+
+window.addEventListener('scroll', () => {
+	if (window.pageYOffset + window.innerHeight >= macbookContent.offsetTop + macbookContent.offsetHeight / 2) {
+		macbookContent.classList.add('change');
+	}
+});
